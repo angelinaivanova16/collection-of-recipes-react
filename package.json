@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [
@@ -50,6 +50,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
-    "typescript-eslint": "^7.7.1",
+    "typescript-eslint": "^7.7.1"
   }
 }
