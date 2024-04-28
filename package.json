@@ -32,8 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "type-check": "tsc --noEmit"
+    "format": "prettier --write ."
   },
   "browserslist": {
     "production": [
@@ -53,7 +52,6 @@
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
     "typescript-eslint": "^7.7.1",
-    "prettier": "^3.2.5",
-    "postcss": "^8.4.38"
+    "prettier": "^3.2.5"
   }
 }
