@@ -1,5 +1,4 @@
-
-name: Deploy Aston project to GitHub Pages
+name: GitHub Pages Deploy
 
 on:
   push:
