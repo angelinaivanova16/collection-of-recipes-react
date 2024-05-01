@@ -1,0 +1,30 @@
+.navigation {
+  border-radius: 5px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1em;
+  transition: 0.3s;
+  color: #1E5945;
+}
+
+.active {
+  text-decoration: none;
+  font-size: 1em;
+  color: #7BA7AB;
+  transition: 0.3s;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  margin: 1.5em;
+}

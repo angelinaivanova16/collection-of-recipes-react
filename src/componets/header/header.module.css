@@ -1,0 +1,35 @@
+.header {
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  border-bottom: 2px solid #1E5945;
+}
+
+.logoAndTitle {
+  display: flex;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.logo {
+  width: 120px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logo:hover {
+  opacity: 0.5;
+}
+
+.title {
+  font-size: 1.5em;
+  color: #1E5945;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.title:hover {
+  opacity: 0.5;
+}
