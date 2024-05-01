@@ -8,7 +8,6 @@ import { Profile } from './componets/profile/Profile';
 import { Favorites } from './componets/favorites/Favorites';
 import { History } from './componets/history/History';
 import { Login } from './componets/login/Login';
-// import { Outlet, Link } from 'react-router-dom';
 
 function App() {
   return (
