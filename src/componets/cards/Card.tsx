@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import classes from './card.module.css';
 
-export const Card = () => {
+
+export const Card = ({name, image}: any) => { // Не понимаю, как передать тип string двум параметрам сразу
   return (
+    
     <div className={classes.card}>
-      <div className={classes.cardWrapper}>
-        <Link to={'/description'} className={classes.cardContainer}> {/* добавить компонент description */}
-          <img className={classes.cardImage} src='' alt="cardImage" />
-          <h1 className={classes.cardTitle}>title</h1>
+        <Link to={'/description'} className={classes.cardContainer}> {/* добавлю компонент description */}
+          <img className={classes.cardImage} src={image} alt="cardImage" />
+          <h1 className={classes.cardTitle}>{name}</h1>
         </Link>
         <button className={classes.btn}>Favorites</button>
-      </div>
     </div>
   )
 }

@@ -1,13 +1,14 @@
 .card {
-  width: 250px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 270px;
   height: 300px;
   border: 1px solid #1E5945;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.cardWrapper {
-  padding: 43px 21px 36px 21px;
 }
 
 .cardContainer {
@@ -21,8 +22,8 @@
 }
 
 .cardImage {
-  width: 270px;
-  height: 271px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 30px;
 }
 
@@ -37,8 +38,9 @@
 
 .btn {
   margin-top: 20px;
-  border: 2px solid #1E5945;
-  color: #1E5945;
+  border: 2px solid #7BA7AB;
+  background: #7BA7AB;
+  color: #FFFFFF;
   border-radius: 50px;
   width: 130px;
   height: 30px;
