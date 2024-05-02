@@ -18,7 +18,7 @@ export const CardsList = () => {
       .then(response => {
         dispatch(setCards(response.data.recipes))
       })
-  }, [setCards]); // Нужно ли сюда какую-то зависимость передать?
+  }, [dispatch]); // Правильная ли здесь зависимость?
 
   return (
     <main className={classes.cardsList}>
