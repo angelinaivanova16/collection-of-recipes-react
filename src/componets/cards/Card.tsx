@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom';
 import classes from './card.module.css';
 
 
-export const Card = ({name, image}: any) => { // Не понимаю, как передать тип string двум параметрам сразу
+type Props = {
+   name: string;
+   image: string;
+};
+
+export const Card = ({ name, image }: Props) => {
   return (
     
     <div className={classes.card}>
