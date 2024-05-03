@@ -8,12 +8,14 @@ import { Profile } from './componets/profile/Profile';
 import { Favorites } from './componets/favorites/Favorites';
 import { History } from './componets/history/History';
 import { Login } from './componets/login/Login';
+import { CardsList } from './componets/cards/CardsList';
 
 function App() {
   return (
     <div className={classes.app}>
       <Header />
       <Search />
+      <CardsList />
       <Routes>
         <Route path="/" element={<App />}/>
         <Route path="/profile" element={<Profile />}/>
