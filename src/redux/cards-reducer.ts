@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: any = { // от всех any избавлюсь, изучаю typescript
-  cards: [],
+interface CardsInitialState {
+  cards: [];
+}
+
+const initialState: CardsInitialState = {
+  cards: []
 }
 
 export const cardsSlice = createSlice({

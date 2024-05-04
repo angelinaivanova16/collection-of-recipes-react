@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 
 
 
-
 export const CardsList = () => {
   let stateCards = useAppSelector(state => state.cards);
   const dispatch = useDispatch();
@@ -18,12 +17,12 @@ export const CardsList = () => {
       .then(response => {
         dispatch(setCards(response.data.recipes))
       })
-  }, [dispatch]); // Правильная ли здесь зависимость?
+  }, [dispatch]);
 
   return (
     <main className={classes.cardsList}>
-      {stateCards.cards.map((item: any) => ( // от всех any избавлюсь, изучаю typescript
-        <Card key={item.id} {...item} />
+      {stateCards.cards.map((item) => (
+        <Card key={item['id']} name={item['name']} image={item['image']} />
       )
       )}
     </main>
