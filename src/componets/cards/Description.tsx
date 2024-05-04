@@ -14,7 +14,6 @@ export const Description = () => {
   let cardId = params.userId;
 
   useEffect(() => {
-    dispatch(setDescription(cardId));
     axios.get("https://dummyjson.com/recipes/" + cardId)
       .then(response => {
         dispatch(setDescription(response.data))
@@ -23,14 +22,24 @@ export const Description = () => {
 
   return (
     <div className={classes.descriptions}>
+      <h1 className={classes.descriptionTitle}>{recipe.name}</h1>
       <div className={classes.wrapper}>
         <img className={classes.descriptionImage} src={recipe.image} alt="cardImage" />
         <div className={classes.rightSide}>
-          <h1 className={classes.descriptionTitle}>{recipe.name}</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, inventore amet? Neque impedit maxime nobis! Quo, culpa asperiores hic iusto quasi tempora, error natus nesciunt similique fugiat et ab! Ipsum.</p>
+          <h2 className={classes.descriptionSubTitle}>Ingredients:</h2>
+          <ul className={classes.ingredientList}  >
+            {recipe.ingredients.map((item: string) => (
+              <li className={classes.ingredient}>{item}</li>
+            ))}
+          </ul>
+          <h2 className={classes.descriptionSubTitle}>Instructions:</h2>
+          <ul className={classes.ingredientList}>
+            {recipe.instructions.map((item: string) => (
+              <li className={classes.instructions}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
-
       <button className={classes.btn}>Favorites</button>
     </div>
   )

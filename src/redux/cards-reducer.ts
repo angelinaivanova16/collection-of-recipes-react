@@ -5,7 +5,9 @@ interface CardsInitialState {
   id: string;
   recipe: {    
     name: string,
-    image: string
+    image: string,
+    ingredients: [],
+    instructions: []
   };
 }
 
@@ -14,7 +16,9 @@ const initialState: CardsInitialState = {
   id: '',
   recipe: {
     name: '',
-    image: ''
+    image: '',
+    ingredients: [],
+    instructions: []
   }
 }
 
@@ -26,9 +30,7 @@ export const cardsSlice = createSlice({
       state.cards = action.payload
     },
     setDescription: (state, action) => {
-      // state.id = action.payload
-      state.recipe = action.payload
-      // console.log(state.recipe)
+      state.recipe = action.payload;
     }
   },
 })
