@@ -19,9 +19,8 @@ export const Description = () => {
       .then(response => {
         dispatch(setDescription(response.data))
       })
-  }, [cardId]);
+  }, [cardId, dispatch]);
 
-  console.log(recipe)
   return (
     <div className={classes.descriptions}>
       <div className={classes.wrapper}>
