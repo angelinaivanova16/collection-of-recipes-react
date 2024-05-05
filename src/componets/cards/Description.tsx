@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../hooks/hooks';
 import { setDescription } from '../../redux/cards-reducer';
 import axios from 'axios';
+import { Button } from '../button/Button';
 
 export const Description = () => {
   let recipe = useAppSelector(state => state.cards.recipe);
@@ -40,7 +41,7 @@ export const Description = () => {
           </ul>
         </div>
       </div>
-      <button className={classes.btn}>Favorites</button>
+      <Button>Favorites</Button>
     </div>
   )
 }
