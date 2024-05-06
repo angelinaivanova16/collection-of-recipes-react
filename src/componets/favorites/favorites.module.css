@@ -6,3 +6,10 @@
   column-gap: 20px;
   row-gap: 30px;
 }
+
+.withoutRecipes {
+  max-width:20%;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #1E5945;
+}

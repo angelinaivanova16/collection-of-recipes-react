@@ -13,17 +13,20 @@ export const Favorites = () => { // Следующим шагом сделаю �
   };
 
   let favoritesCards = cards.filter((item: Props) => {
-    return  favoriteIds.includes(item.id)
+    return favoriteIds.includes(item.id)
   })
 
-  
-  
-  return (
-    <div className={classes.favorites}>
-      {favoritesCards.map((item) => (
-        <Card key={item['id']} id={item['id']} name={item['name']} image={item['image']} />
-      )
-      )}
-    </div>
-  )
+
+  if (favoriteIds.length < 1) {
+    return <p className={classes.withoutRecipes}>You don't have favorite recipes</p>
+  } else {
+    return (
+      <div className={classes.favorites}>
+        {favoritesCards.map((item) => (
+          <Card key={item['id']} id={item['id']} name={item['name']} image={item['image']} />
+        )
+        )}
+      </div>
+    )
+  }
 }
