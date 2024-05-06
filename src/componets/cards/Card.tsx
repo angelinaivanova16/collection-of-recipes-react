@@ -23,7 +23,7 @@ export const Card = ({ id, name, image }: Props) => {
     dispatch(removeFromFavorites(id));
   }
 
-  const renderFavoritesControlBtn = () => {
+  const RenderFavoritesControlBtn = () => {
     if (stateId.includes(id)) {
       return <Button onClick={removeFavorites}>Unfavorite</Button>
     } else {
@@ -38,7 +38,7 @@ export const Card = ({ id, name, image }: Props) => {
         <img className={classes.cardImage} src={image} alt="cardImage" />
         <h1 className={classes.cardTitle}>{name}</h1>
       </NavLink>
-      {renderFavoritesControlBtn()}
+      <RenderFavoritesControlBtn />
     </div>
   )
 }

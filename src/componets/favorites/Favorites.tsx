@@ -21,7 +21,7 @@ export const Favorites = () => { // Следующим шагом сделаю �
   return (
     <div className={classes.favorites}>
       {favoritesCards.map((item) => (
-        <Card id={item['id']} name={item['name']} image={item['image']} />
+        <Card key={item['id']} id={item['id']} name={item['name']} image={item['image']} />
       )
       )}
     </div>

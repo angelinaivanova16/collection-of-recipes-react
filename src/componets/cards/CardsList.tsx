@@ -22,7 +22,7 @@ export const CardsList = () => {
   return (
     <main className={classes.cardsList}>
       {stateCards.cards.map((item) => (
-        <Card id={item['id']} name={item['name']} image={item['image']} />
+        <Card key={item['id']} id={item['id']} name={item['name']} image={item['image']} />
       )
       )}
     </main>
