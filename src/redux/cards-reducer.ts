@@ -27,11 +27,7 @@ export const cardsSlice = createSlice({
   initialState,
   reducers: {
     setCards: (state, action) => {
-      // console.log(state.cards)
-
       state.cards = action.payload
-      // console.log(state.cards)
-
     },
     setDescription: (state, action) => {
       state.recipe = action.payload;
