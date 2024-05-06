@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/collection-of-recipes-react/static/css/main.1558fdd9.css",
-    "main.js": "/collection-of-recipes-react/static/js/main.740e9589.js",
+    "main.css": "/collection-of-recipes-react/static/css/main.9e900915.css",
+    "main.js": "/collection-of-recipes-react/static/js/main.b6aa9f39.js",
     "static/js/453.b385386b.chunk.js": "/collection-of-recipes-react/static/js/453.b385386b.chunk.js",
     "static/media/Roboto-Regular.ttf": "/collection-of-recipes-react/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "index.html": "/collection-of-recipes-react/index.html",
-    "main.1558fdd9.css.map": "/collection-of-recipes-react/static/css/main.1558fdd9.css.map",
-    "main.740e9589.js.map": "/collection-of-recipes-react/static/js/main.740e9589.js.map",
+    "main.9e900915.css.map": "/collection-of-recipes-react/static/css/main.9e900915.css.map",
+    "main.b6aa9f39.js.map": "/collection-of-recipes-react/static/js/main.b6aa9f39.js.map",
     "453.b385386b.chunk.js.map": "/collection-of-recipes-react/static/js/453.b385386b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1558fdd9.css",
-    "static/js/main.740e9589.js"
+    "static/css/main.9e900915.css",
+    "static/js/main.b6aa9f39.js"
   ]
 }
