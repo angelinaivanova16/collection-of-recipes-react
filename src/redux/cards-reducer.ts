@@ -2,10 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface CardsInitialState {
   cards: [];
+  id: string;
+  recipe: {    
+    name: string,
+    image: string,
+    ingredients: [],
+    instructions: []
+  };
 }
 
 const initialState: CardsInitialState = {
-  cards: []
+  cards: [],
+  id: '',
+  recipe: {
+    name: '',
+    image: '',
+    ingredients: [],
+    instructions: []
+  }
 }
 
 export const cardsSlice = createSlice({
@@ -13,11 +27,18 @@ export const cardsSlice = createSlice({
   initialState,
   reducers: {
     setCards: (state, action) => {
+      // console.log(state.cards)
+
       state.cards = action.payload
+      // console.log(state.cards)
+
     },
+    setDescription: (state, action) => {
+      state.recipe = action.payload;
+    }
   },
 })
 
-export const { setCards } = cardsSlice.actions;
+export const { setCards, setDescription } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

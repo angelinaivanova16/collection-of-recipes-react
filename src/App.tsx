@@ -9,6 +9,7 @@ import { Favorites } from './componets/favorites/Favorites';
 import { History } from './componets/history/History';
 import { Login } from './componets/login/Login';
 import { Main } from './componets/main/Main';
+import { Description } from './componets/cards/Description';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/favorites" element={<Favorites />}/>
         <Route path="/history" element={<History />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/description/:userId?" element={<Description />}/>
       </Routes>
     </div>
   );
