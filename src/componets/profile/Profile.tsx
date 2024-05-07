@@ -9,4 +9,4 @@ const Profile = () => {
   )
 }
 
-export default Profile; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого
+export default Profile;

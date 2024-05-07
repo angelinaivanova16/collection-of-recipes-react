@@ -31,4 +31,4 @@ const Favorites = () => { // Следующим шагом сделаю авто
   }
 }
 
-export default Favorites; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого
+export default Favorites;

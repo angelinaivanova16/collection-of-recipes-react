@@ -8,4 +8,4 @@ const Login = () => {
   )
 }
 
-export default Login; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого
+export default Login;

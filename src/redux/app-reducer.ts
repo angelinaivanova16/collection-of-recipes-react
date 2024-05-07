@@ -14,7 +14,6 @@ export const initializeSlice = createSlice({
   reducers: {
     initializeApp: (state, action) => {
       state.initialized = action.payload
-      // console.log(state.initialized)
     },
   },
 })
