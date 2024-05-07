@@ -27,9 +27,4 @@
   font-size: 1.5em;
   color: #1E5945;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.title:hover {
-  opacity: 0.5;
 }

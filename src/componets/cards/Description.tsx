@@ -41,7 +41,6 @@ const Description = () => {
           </ul>
         </div>
       </div>
-      <Button>Favorites</Button>
     </div>
   )
 }
