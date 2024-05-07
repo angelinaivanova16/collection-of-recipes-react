@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcollection_of_recipes_react=self.webpackChunkcollection_of_recipes_react||[]).push([[496],{496:(e,c,s)=>{s.r(c),s.d(c,{default:()=>r});const l={};var o=s(579);const r=()=>(0,o.jsx)("div",{className:l.profile,children:"\u0437\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0435\u0442 profile"})}}]);
+//# sourceMappingURL=496.02bde302.chunk.js.map
