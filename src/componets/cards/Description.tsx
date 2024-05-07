@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../hooks/hooks';
 import { setDescription } from '../../redux/cards-reducer';
 import axios from 'axios';
-import { Button } from '../button/Button';
 
 const Description = () => {
   let recipe = useAppSelector(state => state.cards.recipe);
