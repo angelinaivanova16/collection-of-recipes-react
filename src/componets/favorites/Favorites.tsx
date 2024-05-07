@@ -2,7 +2,7 @@ import { useAppSelector } from '../../hooks/hooks';
 import { Card } from '../cards/Card';
 import classes from './favorites.module.css';
 
-export const Favorites = () => { // Следующим шагом сделаю авторизацию и "избранное" закрытым для гостей.
+const Favorites = () => { // Следующим шагом сделаю авторизацию и "избранное" закрытым для гостей.
   const favoriteIds = useAppSelector(state => state.favorites.favoritesIds);
   const cards = useAppSelector(state => state.cards.cards);
 
@@ -30,3 +30,5 @@ export const Favorites = () => { // Следующим шагом сделаю �
     )
   }
 }
+
+export default Favorites; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого

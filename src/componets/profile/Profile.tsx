@@ -1,6 +1,6 @@
 import classes from './profile.module.css';
 
-export const Profile = () => {
+const Profile = () => {
 
   return (
     <div className={classes.profile}>
@@ -8,3 +8,5 @@ export const Profile = () => {
     </div>
   )
 }
+
+export default Profile; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого

@@ -7,7 +7,7 @@ import { setDescription } from '../../redux/cards-reducer';
 import axios from 'axios';
 import { Button } from '../button/Button';
 
-export const Description = () => {
+const Description = () => {
   let recipe = useAppSelector(state => state.cards.recipe);
   const dispatch = useDispatch();
 
@@ -45,3 +45,5 @@ export const Description = () => {
     </div>
   )
 }
+
+export default Description; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого
