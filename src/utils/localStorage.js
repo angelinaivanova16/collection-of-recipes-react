@@ -14,7 +14,3 @@ export function getDataFromLS(key, array) {
 export function setDataToLS(key, data) {
 	localStorage.setItem(key, JSON.stringify(data));
 }
-
-export function removeDataFromLS(key) {
-	localStorage.removeItem(key);
-}
