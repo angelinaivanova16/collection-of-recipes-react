@@ -1,10 +1,12 @@
+import { useGetRecipesQuery } from '../../api/recipesApi';
 import { useAppSelector } from '../../hooks/hooks';
 import { Card } from '../cards/Card';
 import classes from './favorites.module.css';
 
-const Favorites = () => { // Следующим шагом сделаю авторизацию и "избранное" закрытым для гостей.
+const Favorites = () => {
   const favoriteIds = useAppSelector(state => state.favorites.favoritesIds);
-  const cards = useAppSelector(state => state.cards.cards);
+  const { data } = useGetRecipesQuery();
+  const recipes = data?.recipes!;
 
   type Props = {
     id: string;
@@ -12,7 +14,7 @@ const Favorites = () => { // Следующим шагом сделаю авто
     image: string;
   };
 
-  let favoritesCards = cards.filter((item: Props) => {
+  let favoritesCards = recipes.filter((item: Props) => {
     return favoriteIds.includes(item.id)
   })
 

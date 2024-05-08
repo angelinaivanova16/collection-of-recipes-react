@@ -1,27 +1,20 @@
 import classes from './cardsList.module.css';
 import { Card } from './Card';
-import { useAppSelector } from '../../hooks/hooks';
-import { useEffect } from 'react';
-import axios from 'axios';
-import { setCards } from '../../redux/cards-reducer';
-import { useDispatch } from 'react-redux';
-
-
+import { useGetRecipesQuery } from '../../api/recipesApi';
+import { Preloader } from '../common/Preloader';
 
 export const CardsList = () => {
-  let stateCards = useAppSelector(state => state.cards);
-  const dispatch = useDispatch();
+  const { data, isLoading } = useGetRecipesQuery();
+  const recipes = data?.recipes!; // Какая есть альтернатива этому "!", чтобы избавиться от ошибки "recipes is possibly undefined"?
 
-  useEffect(() => {
-    axios.get("https://dummyjson.com/recipes")
-      .then(response => {
-        dispatch(setCards(response.data.recipes))
-      })
-  }, [dispatch]);
+
+  if (isLoading) {
+		return <Preloader />;
+	}
 
   return (
     <main className={classes.cardsList}>
-      {stateCards.cards.map((item) => (
+      {recipes.map((item) => (
         <Card key={item['id']} id={item['id']} name={item['name']} image={item['image']} />
       )
       )}
