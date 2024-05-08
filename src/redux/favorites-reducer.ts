@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getDataFromLS, key } from "../utils/localStorage";
+import { getDataFromLS, getKey } from "../utils/localStorage";
 
 interface FavoritesInitialState {
   favoritesIds: string[];
 }
 
 const initialState: FavoritesInitialState = {
-  favoritesIds: getDataFromLS(key('favorites'), '[]')
+  favoritesIds: getDataFromLS(getKey('favorites'), '[]')
 }
 
 export const favoritesSlice = createSlice({

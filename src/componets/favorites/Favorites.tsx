@@ -1,12 +1,17 @@
+import classes from './favorites.module.css';
 import { useGetRecipesQuery } from '../../api/recipesApi';
 import { useAppSelector } from '../../hooks/hooks';
 import { Card } from '../cards/Card';
-import classes from './favorites.module.css';
+import { Preloader } from '../common/Preloader';
 
 const Favorites = () => {
   const favoriteIds = useAppSelector(state => state.favorites.favoritesIds);
-  const { data } = useGetRecipesQuery();
+  const { data, isLoading } = useGetRecipesQuery();
   const recipes = data?.recipes!;
+
+  if (isLoading) {
+    return <Preloader />;
+  }
 
   type Props = {
     id: string;
@@ -17,7 +22,6 @@ const Favorites = () => {
   let favoritesCards = recipes.filter((item: Props) => {
     return favoriteIds.includes(item.id)
   })
-
 
   if (favoriteIds.length < 1) {
     return <p className={classes.withoutRecipes}>You don't have favorite recipes</p>

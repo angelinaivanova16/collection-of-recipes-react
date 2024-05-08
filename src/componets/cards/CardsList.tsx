@@ -5,7 +5,7 @@ import { Preloader } from '../common/Preloader';
 
 export const CardsList = () => {
   const { data, isLoading } = useGetRecipesQuery();
-  const recipes = data?.recipes!; // Какая есть альтернатива этому "!", чтобы избавиться от ошибки "recipes is possibly undefined"?
+  const recipes = data?.recipes!; // Какая есть альтернатива этому "!", чтобы избавиться от ошибки "recipes is possibly undefined" на 17 строке?
 
 
   if (isLoading) {

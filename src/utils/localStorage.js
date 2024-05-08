@@ -1,10 +1,5 @@
-export function key(type) {
-	const user = JSON.parse(localStorage.getItem('isAuth') ?? '[]');
-	if (user) {
-		return `${user} ${type}`;
-	} else {
-		return '';
-	}
+export function getKey(type) {
+	return `${type}`;
 }
 
 export function getDataFromLS(key, array) {
