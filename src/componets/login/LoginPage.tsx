@@ -1,12 +1,12 @@
 import FormRegistrationLogin from './FormRegistrationLogin';
 import classes from './registrationPage.module.css';
 
-const RegistrationPage = () => {
+const LoginPage = () => {
   return (
     <div className={classes.registrationContainer}>
-      <FormRegistrationLogin name='sign up' toggle='Sign in' link={'/loginPage'}/>
+      <FormRegistrationLogin name='sign in' toggle='Sign up' link={'/registrationPage'}/>
     </div>
   )
 }
 
-export default RegistrationPage;
+export default LoginPage;

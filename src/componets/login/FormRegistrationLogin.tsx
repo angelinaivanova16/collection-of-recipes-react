@@ -2,14 +2,20 @@ import { Link } from 'react-router-dom';
 import classes from './formRegistrationLogin.module.css';
 import { Button } from '../button/Button';
 
-const FormRegistrationLogin = () => {
+type Props = {
+  name: string;
+  toggle: string;
+  link: string;
+};
+
+const FormRegistrationLogin = ({ name, toggle, link }: Props) => {
   return (
       <form className={classes.formRegistration} action="">
-        <Link to={'/authorization'}>
-          <p className={classes.formSubtitle}>Авторизоваться</p>
+        <Link to={link}>
+          <p className={classes.formSubtitle}>{toggle}</p>
         </Link>
         <div className={classes.formWrapper}>
-          <h1 className={classes.formTitle}>Sign Up</h1>
+          <h1 className={classes.formTitle}>{name}</h1>
           <input
               className={classes.formItem}
               type="text"
@@ -24,7 +30,7 @@ const FormRegistrationLogin = () => {
               id="password"
             />
           <p className="form-registration__notification" id="notification2"></p>
-          <Button>Sign up</Button>
+          <Button>{name}</Button>
         </div>
       </form>
   )

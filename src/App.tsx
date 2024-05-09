@@ -7,6 +7,7 @@ import { ErrorBoundary } from './componets/common/errorBoundary.jsx';
 import { Header } from './componets/header/Header';
 import { Search } from './componets/search/Search';
 import { Preloader } from './componets/common/Preloader';
+import LoginPage from './componets/login/LoginPage';
 
 const Main = lazy(() => import('./componets/main/Main'));
 const Profile = lazy(() => import('./componets/profile/Profile'));
@@ -30,6 +31,7 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/history" element={<History />} />
             <Route path="/registrationPage" element={<RegistrationPage />} />
+            <Route path="/loginPage" element={<LoginPage />} />
             <Route path="/description/:userId?" element={<Description />} />
           </Routes>
         </Suspense>
