@@ -17,25 +17,25 @@ const Description = lazy(() => import('./componets/cards/Description'));
 
 function App() {
 
-    return (
-      <div className={classes.app}>
-        <Header />
-        <Search />
-        <ErrorBoundary>
-          <Suspense fallback={<Preloader />}>
-            <Routes>
-              <Route path="/*" element={<Main />} />
-              <Route path="/main" element={<Main />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/history" element={<History />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/description/:userId?" element={<Description />} />
-            </Routes>
-          </Suspense>
-        </ErrorBoundary>
-      </div>
-    );
-  }
+  return (
+    <div className={classes.app}>
+      <Header />
+      <Search />
+      <ErrorBoundary>
+        <Suspense fallback={<Preloader />}>
+          <Routes>
+            <Route path="/*" element={<Main />} />
+            <Route path="/main" element={<Main />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/description/:userId?" element={<Description />} />
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
+    </div>
+  );
+}
 
 export default App;

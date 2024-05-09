@@ -1,24 +1,21 @@
-import { useParams } from 'react-router-dom';
 import classes from './description.module.css';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../hooks/hooks';
-import { setDescription } from '../../redux/cards-reducer';
-import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { useGetDescriptionQuery } from '../../api/recipesApi';
+import { Preloader } from '../common/Preloader';
+
+type Params = {
+  userId: string;
+};
 
 const Description = () => {
-  let recipe = useAppSelector(state => state.cards.recipe);
-  const dispatch = useDispatch();
+  const params = useParams() as Params;
 
-  let params = useParams();
-  let cardId = params.userId;
+  const { data, isLoading } = useGetDescriptionQuery(params.userId);
+  const recipe = data!;
 
-  useEffect(() => {
-    axios.get("https://dummyjson.com/recipes/" + cardId)
-      .then(response => {
-        dispatch(setDescription(response.data))
-      })
-  }, [cardId, dispatch]);
+  if (isLoading) {
+    return <Preloader />;
+  }
 
   return (
     <div className={classes.descriptions}>
@@ -29,13 +26,13 @@ const Description = () => {
           <h2 className={classes.descriptionSubTitle}>Ingredients:</h2>
           <ul className={classes.ingredientList}  >
             {recipe.ingredients.map((item: string) => (
-              <li className={classes.ingredient}>{item}</li>
+              <li key={item.toString()} className={classes.ingredient}>{item}</li>
             ))}
           </ul>
           <h2 className={classes.descriptionSubTitle}>Instructions:</h2>
           <ul className={classes.ingredientList}>
             {recipe.instructions.map((item: string) => (
-              <li className={classes.instructions}>{item}</li>
+              <li key={item.toString()} className={classes.instructions}>{item}</li>
             ))}
           </ul>
         </div>
@@ -44,4 +41,4 @@ const Description = () => {
   )
 }
 
-export default Description; // Пришлось добавить сюда export default, т.к. lazy в App.tsx ругается без этого
+export default Description;

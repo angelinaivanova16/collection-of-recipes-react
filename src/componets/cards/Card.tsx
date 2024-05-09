@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
 import classes from './card.module.css';
+import { NavLink } from 'react-router-dom';
 import { Button } from '../button/Button';
 import { useDispatch } from 'react-redux';
 import { addToFavorites, removeFromFavorites } from '../../redux/favorites-reducer';
@@ -32,7 +32,6 @@ export const Card = ({ id, name, image }: Props) => {
   }
 
   return (
-
     <div className={classes.card}>
       <NavLink to={'/description/' + id} className={classes.cardContainer}>
         <img className={classes.cardImage} src={image} alt="cardImage" />
