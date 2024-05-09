@@ -12,7 +12,7 @@ const Main = lazy(() => import('./componets/main/Main'));
 const Profile = lazy(() => import('./componets/profile/Profile'));
 const Favorites = lazy(() => import('./componets/favorites/Favorites'));
 const History = lazy(() => import('./componets/history/History'));
-const Login = lazy(() => import('./componets/login/Login'));
+const RegistrationPage = lazy(() => import('./componets/login/RegistrationPage'));
 const Description = lazy(() => import('./componets/cards/Description'));
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/history" element={<History />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/registrationPage" element={<RegistrationPage />} />
             <Route path="/description/:userId?" element={<Description />} />
           </Routes>
         </Suspense>

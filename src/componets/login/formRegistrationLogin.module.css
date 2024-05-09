@@ -1,0 +1,48 @@
+.formRegistration {
+  margin-top: 30px;
+  border: 2px solid #7BA7AB;
+  width: 460px;
+  height: 340px;
+}
+
+.formSubtitle {
+  text-align: end;
+  text-decoration: underline;
+  font-size: 11px;
+  line-height: 13px;
+  color: #D58C51;
+  padding: 11px 11px 0 0;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.formSubtitle:hover {
+  opacity: 0.7;
+}
+
+.formWrapper {
+  text-align: center;
+}
+
+.formTitle {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 38px;
+  color: #1E5945;
+  margin-bottom: 21px;
+}
+
+.formItem {
+  width: 420px;
+  height: 39px;
+  border: 1px solid #7BA7AB;
+  border-radius: 61px;
+  margin-top: 15px;
+}
+
+.formItem::placeholder {
+  text-align: left;
+  font-size: 14px;
+  line-height: 20px;
+  color: #818081;
+  padding-left: 15px;
+}
