@@ -1,39 +1,37 @@
 {
   "files": {
     "main.css": "/collection-of-recipes-react/static/css/main.a60c48db.css",
-    "main.js": "/collection-of-recipes-react/static/js/main.933893aa.js",
+    "main.js": "/collection-of-recipes-react/static/js/main.7cf21f7d.js",
     "static/css/819.98db7113.chunk.css": "/collection-of-recipes-react/static/css/819.98db7113.chunk.css",
-    "static/js/819.5090c734.chunk.js": "/collection-of-recipes-react/static/js/819.5090c734.chunk.js",
+    "static/js/819.3e5fcb0c.chunk.js": "/collection-of-recipes-react/static/js/819.3e5fcb0c.chunk.js",
     "static/css/496.31d6cfe0.chunk.css": "/collection-of-recipes-react/static/css/496.31d6cfe0.chunk.css",
     "static/js/496.02bde302.chunk.js": "/collection-of-recipes-react/static/js/496.02bde302.chunk.js",
-    "static/css/969.fc715015.chunk.css": "/collection-of-recipes-react/static/css/969.fc715015.chunk.css",
-    "static/js/969.9154ed99.chunk.js": "/collection-of-recipes-react/static/js/969.9154ed99.chunk.js",
+    "static/css/969.73cb0efd.chunk.css": "/collection-of-recipes-react/static/css/969.73cb0efd.chunk.css",
+    "static/js/969.3be3d388.chunk.js": "/collection-of-recipes-react/static/js/969.3be3d388.chunk.js",
     "static/css/348.31d6cfe0.chunk.css": "/collection-of-recipes-react/static/css/348.31d6cfe0.chunk.css",
     "static/js/348.b7421ad8.chunk.js": "/collection-of-recipes-react/static/js/348.b7421ad8.chunk.js",
     "static/css/782.31d6cfe0.chunk.css": "/collection-of-recipes-react/static/css/782.31d6cfe0.chunk.css",
     "static/js/782.f055175f.chunk.js": "/collection-of-recipes-react/static/js/782.f055175f.chunk.js",
     "static/css/133.97bf21a3.chunk.css": "/collection-of-recipes-react/static/css/133.97bf21a3.chunk.css",
-    "static/js/133.b49c91a8.chunk.js": "/collection-of-recipes-react/static/js/133.b49c91a8.chunk.js",
+    "static/js/133.7e206b8f.chunk.js": "/collection-of-recipes-react/static/js/133.7e206b8f.chunk.js",
     "static/js/453.b385386b.chunk.js": "/collection-of-recipes-react/static/js/453.b385386b.chunk.js",
-    "static/js/154.942af05e.chunk.js": "/collection-of-recipes-react/static/js/154.942af05e.chunk.js",
     "static/media/Roboto-Regular.ttf": "/collection-of-recipes-react/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "index.html": "/collection-of-recipes-react/index.html",
     "main.a60c48db.css.map": "/collection-of-recipes-react/static/css/main.a60c48db.css.map",
-    "main.933893aa.js.map": "/collection-of-recipes-react/static/js/main.933893aa.js.map",
+    "main.7cf21f7d.js.map": "/collection-of-recipes-react/static/js/main.7cf21f7d.js.map",
     "819.98db7113.chunk.css.map": "/collection-of-recipes-react/static/css/819.98db7113.chunk.css.map",
-    "819.5090c734.chunk.js.map": "/collection-of-recipes-react/static/js/819.5090c734.chunk.js.map",
+    "819.3e5fcb0c.chunk.js.map": "/collection-of-recipes-react/static/js/819.3e5fcb0c.chunk.js.map",
     "496.02bde302.chunk.js.map": "/collection-of-recipes-react/static/js/496.02bde302.chunk.js.map",
-    "969.fc715015.chunk.css.map": "/collection-of-recipes-react/static/css/969.fc715015.chunk.css.map",
-    "969.9154ed99.chunk.js.map": "/collection-of-recipes-react/static/js/969.9154ed99.chunk.js.map",
+    "969.73cb0efd.chunk.css.map": "/collection-of-recipes-react/static/css/969.73cb0efd.chunk.css.map",
+    "969.3be3d388.chunk.js.map": "/collection-of-recipes-react/static/js/969.3be3d388.chunk.js.map",
     "348.b7421ad8.chunk.js.map": "/collection-of-recipes-react/static/js/348.b7421ad8.chunk.js.map",
     "782.f055175f.chunk.js.map": "/collection-of-recipes-react/static/js/782.f055175f.chunk.js.map",
     "133.97bf21a3.chunk.css.map": "/collection-of-recipes-react/static/css/133.97bf21a3.chunk.css.map",
-    "133.b49c91a8.chunk.js.map": "/collection-of-recipes-react/static/js/133.b49c91a8.chunk.js.map",
-    "453.b385386b.chunk.js.map": "/collection-of-recipes-react/static/js/453.b385386b.chunk.js.map",
-    "154.942af05e.chunk.js.map": "/collection-of-recipes-react/static/js/154.942af05e.chunk.js.map"
+    "133.7e206b8f.chunk.js.map": "/collection-of-recipes-react/static/js/133.7e206b8f.chunk.js.map",
+    "453.b385386b.chunk.js.map": "/collection-of-recipes-react/static/js/453.b385386b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a60c48db.css",
-    "static/js/main.933893aa.js"
+    "static/js/main.7cf21f7d.js"
   ]
 }
