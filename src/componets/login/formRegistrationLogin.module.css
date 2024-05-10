@@ -1,0 +1,40 @@
+.formRegistration {
+  margin-top: 30px;
+  border: 2px solid #7BA7AB;
+  width: 220px;
+  height: 340px;
+  padding: 0 30px
+}
+
+.formSubtitle {
+  text-align: end;
+  text-decoration: underline;
+  font-size: 11px;
+  line-height: 13px;
+  color: #D58C51;
+  padding: 11px 11px 0 0;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.formSubtitle:hover {
+  opacity: 0.7;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.formTitle {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 38px;
+  color: #1E5945;
+  margin-bottom: 21px;
+}
+
+.notification {
+  color: #D58C51;
+}

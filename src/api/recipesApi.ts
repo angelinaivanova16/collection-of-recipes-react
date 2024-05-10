@@ -16,11 +16,11 @@ export const recipesApi = createApi({
   reducerPath: 'recipesApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com/' }),
   endpoints: build => ({
-    getRecipes: build.query<RecipesResponse, void>({
+    getRecipes: build.query<Recipe[], void>({
       query: () => ({
         url: 'recipes'
       }),
-      // transformResponse: response => response.data.recipes // здесь пока ошибка с типами
+      transformResponse: (response: RecipesResponse) => response.recipes
     }),
     getDescription: build.query({
       query: id => {
@@ -28,7 +28,6 @@ export const recipesApi = createApi({
           url: `recipes/${id}`
         };
       },
-      // transformResponse: response => response
     }),
   }),
   tagTypes: ['Recipes'],

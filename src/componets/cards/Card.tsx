@@ -4,6 +4,7 @@ import { Button } from '../button/Button';
 import { useDispatch } from 'react-redux';
 import { addToFavorites, removeFromFavorites } from '../../redux/favorites-reducer';
 import { useAppSelector } from '../../hooks/hooks';
+import PropTypes from 'prop-types';
 
 type Props = {
   id: string;
@@ -41,3 +42,9 @@ export const Card = ({ id, name, image }: Props) => {
     </div>
   )
 }
+
+Card.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string
+};

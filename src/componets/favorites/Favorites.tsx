@@ -7,7 +7,7 @@ import { Preloader } from '../common/Preloader';
 const Favorites = () => {
   const favoriteIds = useAppSelector(state => state.favorites.favoritesIds);
   const { data, isLoading } = useGetRecipesQuery();
-  const recipes = data?.recipes!;
+  const recipes = data!;
 
   if (isLoading) {
     return <Preloader />;

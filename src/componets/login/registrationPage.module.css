@@ -1,0 +1,9 @@
+.registrationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification {
+  color: #D58C51;
+}
