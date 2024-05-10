@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import PropTypes from 'prop-types';
 
 
 const FormRegistrationLogin = ({ name, toggle, link, submit }) => {
@@ -80,5 +81,12 @@ const FormRegistrationLogin = ({ name, toggle, link, submit }) => {
     </form>
   )
 }
+
+FormRegistrationLogin.propTypes = {
+  name: PropTypes.string,
+  toggle: PropTypes.string,
+  link: PropTypes.string,
+  submit: PropTypes.func
+};
 
 export default FormRegistrationLogin;

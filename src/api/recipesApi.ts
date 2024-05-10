@@ -20,7 +20,7 @@ export const recipesApi = createApi({
       query: () => ({
         url: 'recipes'
       }),
-      transformResponse: (response: RecipesResponse) =>  response.recipes // здесь пока ошибка с типами
+      transformResponse: (response: RecipesResponse) => response.recipes
     }),
     getDescription: build.query({
       query: id => {
