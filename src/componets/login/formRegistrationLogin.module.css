@@ -1,8 +1,9 @@
 .formRegistration {
   margin-top: 30px;
   border: 2px solid #7BA7AB;
-  width: 460px;
+  width: 220px;
   height: 340px;
+  padding: 0 30px
 }
 
 .formSubtitle {
@@ -20,6 +21,9 @@
 }
 
 .formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
@@ -31,18 +35,6 @@
   margin-bottom: 21px;
 }
 
-.formItem {
-  width: 420px;
-  height: 39px;
-  border: 1px solid #7BA7AB;
-  border-radius: 61px;
-  margin-top: 15px;
-}
-
-.formItem::placeholder {
-  text-align: left;
-  font-size: 14px;
-  line-height: 20px;
-  color: #818081;
-  padding-left: 15px;
+.notification {
+  color: #D58C51;
 }
