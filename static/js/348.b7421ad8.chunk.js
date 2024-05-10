@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcollection_of_recipes_react=self.webpackChunkcollection_of_recipes_react||[]).push([[348],{348:(e,c,s)=>{s.r(c),s.d(c,{default:()=>r});const t={};var o=s(579);const r=()=>(0,o.jsx)("div",{className:t.history,children:"\u0437\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0435\u0442 history"})}}]);
-//# sourceMappingURL=348.b7421ad8.chunk.js.map
