@@ -14,7 +14,7 @@ export type Recipe = {
   instructions: string[];
 };
 
-export const Search = () => {
+export const SearchForm = () => {
   const [search, setSearch] = useState('');
 
   const [isSuggestHidden, setIsSuggestHidden] = useState(true);
@@ -99,8 +99,9 @@ export const Search = () => {
         <button type='submit' className={classes.btn}></button>
       </form>
       <div
-        // className={ // написать стили с isSuggestHidden
-        //}
+        // className={classNames(cls.suggestions, { // написать стили с isSuggestHidden
+        //   [cls.hidden]: isSuggestHidden || search.length === 0,
+        // })}
         ref={suggestionsRef}
       >
         {renderContent()}
