@@ -1,4 +1,4 @@
-import classes from './search.module.css';
+import classes from './searchForm.module.css';
 import { FormEvent, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useGetRecipesBySearchQuery } from '../../api/recipesApi';
@@ -69,7 +69,7 @@ export const SearchForm = () => {
       return recipes.map((item) => (
         <Suggest
           key={item.id}
-          name={name}
+          name={item.name}
           handleSuggestClick={() => handleSuggestClick(item)}
         />
       ));
@@ -98,10 +98,7 @@ export const SearchForm = () => {
         />
         <button type='submit' className={classes.btn}></button>
       </form>
-      <div
-        // className={classNames(cls.suggestions, { // написать стили с isSuggestHidden
-        //   [cls.hidden]: isSuggestHidden || search.length === 0,
-        // })}
+      <div className={isSuggestHidden === true ? classes.hidden : classes.active}
         ref={suggestionsRef}
       >
         {renderContent()}

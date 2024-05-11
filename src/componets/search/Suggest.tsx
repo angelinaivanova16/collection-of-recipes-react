@@ -1,3 +1,5 @@
+import classes from './suggest.module.css';
+
 type Props = {
   name: string;
   handleSuggestClick: () => void;
@@ -6,8 +8,8 @@ type Props = {
 export const Suggest = ({ name, handleSuggestClick }: Props) => {
 
   return (
-    <button type="button" onClick={handleSuggestClick} >
-      <div>
+    <button className={classes.container} type="button" onClick={handleSuggestClick} >
+      <div className={classes.name}>
         {name}
       </div>
     </button>
