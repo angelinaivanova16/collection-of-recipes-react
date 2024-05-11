@@ -5,6 +5,9 @@ import { useGetRecipesBySearchQuery } from '../../api/recipesApi';
 import { useDebounce } from '../../hooks/hooks';
 import { Preloader } from '../common/Preloader';
 import { Suggest } from './Suggest';
+import { getDataFromLS, setDataToLS } from '../../utils/localStorage';
+import { useDispatch } from 'react-redux';
+import { addToHistory } from '../../redux/history-reducer';
 
 export type Recipe = {
   id: string;
@@ -16,6 +19,11 @@ export type Recipe = {
 
 export const SearchForm = () => {
   const [searchValue, setSearchValue] = useState('');
+  const dispatch = useDispatch();
+  const [error, setError] = useState('');
+
+  const isAuth = getDataFromLS('isAuth', '""');
+  const isAuthHistory = isAuth + ' history';
 
   const [isSuggestHidden, setIsSuggestHidden] = useState(true);
   const handleInputFocus = () => setIsSuggestHidden(false);
@@ -31,7 +39,7 @@ export const SearchForm = () => {
 
   const debouncedSearch = useDebounce(searchValue);
 
-  // спрячу саджесты при клике вне формы:
+  // Спрячу саджесты при клике вне формы:
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -48,7 +56,7 @@ export const SearchForm = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-  ////
+  ////////
 
   const handleSubmitSearch = (e: FormEvent) => {
     e.preventDefault();
@@ -64,10 +72,25 @@ export const SearchForm = () => {
     setIsSuggestHidden(true);
   };
 
-  const {data, isLoading} = useGetRecipesBySearchQuery(debouncedSearch, {skip: debouncedSearch.length === 0});
+  const { data, isLoading } = useGetRecipesBySearchQuery(debouncedSearch, { skip: debouncedSearch.length === 0 });
   const recipes = data!;
 
-  
+
+  // Добавлю в историю поиска:
+  const setToHistory = () => {
+    if (!debouncedSearch) {
+      setError('Error');
+    }
+    dispatch(addToHistory(debouncedSearch));
+    if (!getDataFromLS(isAuthHistory, '[]').includes(debouncedSearch)) {
+      setDataToLS(isAuthHistory, [
+        ...getDataFromLS(isAuthHistory, '""'),
+        debouncedSearch
+      ]);
+    }
+  };
+  ////////
+
   const suggestsWrapper = () => {
     if (isLoading) {
       return <Preloader />;
@@ -97,13 +120,14 @@ export const SearchForm = () => {
           onFocus={handleInputFocus}
           ref={inputRef}
         />
-        <button type='submit' className={classes.btn}></button>
+        <button type='submit' className={classes.btn} onClick={setToHistory}></button>
       </form>
       <div className={isSuggestHidden === true ? classes.hidden : classes.active}
         ref={suggestionsRef}
       >
         {suggestsWrapper()}
       </div>
+      {error && <p className={classes.error}>{error}</p>}
     </div>
 
   )

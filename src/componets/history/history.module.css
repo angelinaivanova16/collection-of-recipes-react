@@ -1,0 +1,12 @@
+.historyTitle, .historyEmpty{
+  max-width:20%;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #1E5945;
+  font-size: 1.3em;
+}
+
+.historyEmpty {
+  color: #D58C51;
+  font-size: 1em;
+}
