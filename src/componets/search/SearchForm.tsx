@@ -1,5 +1,5 @@
 import classes from './searchForm.module.css';
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useGetRecipesBySearchQuery } from '../../api/recipesApi';
 import { useDebounce } from '../../hooks/hooks';
@@ -15,7 +15,7 @@ export type Recipe = {
 };
 
 export const SearchForm = () => {
-  const [search, setSearch] = useState('');
+  const [searchValue, setSearchValue] = useState('');
 
   const [isSuggestHidden, setIsSuggestHidden] = useState(true);
   const handleInputFocus = () => setIsSuggestHidden(false);
@@ -29,42 +29,49 @@ export const SearchForm = () => {
   const suggestionsRef = useRef<null | HTMLDivElement>(null);
   const inputRef = useRef<null | HTMLInputElement>(null);
 
-  const debouncedSearch = useDebounce(search);
+  const debouncedSearch = useDebounce(searchValue);
 
+  // спрячу саджесты при клике вне формы:
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(e.target as Element) &&
+        e.target !== inputRef.current
+      ) {
+        setIsSuggestHidden(true);
+      }
+    };
 
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+  ////
 
   const handleSubmitSearch = (e: FormEvent) => {
     e.preventDefault();
-    if (search.trim() && name !== search.trim()) { // для себя: trim - без пробелов с концов
-      navigate(`/search?name=${search}`);
+    if (searchValue.trim() && name !== searchValue.trim()) {
+      navigate(`/search?name=${searchValue}`);
       setIsSuggestHidden(true);
       inputRef.current?.blur();
     }
   };
 
+  const handleSuggestClick = (item: Recipe) => {
+    navigate(`/description/${item.id}`);
+    setIsSuggestHidden(true);
+  };
 
-  const {
-    data,
-    error,
-    isLoading,
-    // isFetching, // доделать
-  } = useGetRecipesBySearchQuery(debouncedSearch, {
-    skip: debouncedSearch.length === 0,
-  });
+  const {data, isLoading} = useGetRecipesBySearchQuery(debouncedSearch, {skip: debouncedSearch.length === 0});
   const recipes = data!;
 
-
-  const renderContent = () => {
-
-    if (error) {
-      return <div>Ничего не нашлось</div>;
+  
+  const suggestsWrapper = () => {
+    if (isLoading) {
+      return <Preloader />;
     }
-
-    const handleSuggestClick = (item: Recipe) => {
-      navigate(`/description/${item.id}`);
-      setIsSuggestHidden(true);
-    };
-
     if (recipes && recipes.length > 0) {
       return recipes.map((item) => (
         <Suggest
@@ -74,15 +81,9 @@ export const SearchForm = () => {
         />
       ));
     }
-
     return null;
   };
 
-
-
-  if (isLoading) {
-    return <Preloader />;
-  }
 
   return (
     <div className={classes.searchWrapper}>
@@ -91,8 +92,8 @@ export const SearchForm = () => {
           className={classes.inputSearch}
           placeholder='Search recipe...'
           type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
           onFocus={handleInputFocus}
           ref={inputRef}
         />
@@ -101,7 +102,7 @@ export const SearchForm = () => {
       <div className={isSuggestHidden === true ? classes.hidden : classes.active}
         ref={suggestionsRef}
       >
-        {renderContent()}
+        {suggestsWrapper()}
       </div>
     </div>
 
