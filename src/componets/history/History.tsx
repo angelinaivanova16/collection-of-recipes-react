@@ -24,15 +24,15 @@ const History = () => {
     <div className={classes.history}>
       <h2 className={classes.historyTitle}>Search history:</h2>
       {history.length ? (
-        <div>
+        <div className={classes.historyList}>
           {history.map((el, id) => (
-            <div className={classes.history} key={id}>
-              <Link className={classes.link} to={`/search?name=${el}`}>
+            <div className={classes.historyItem} key={id}>
+              <Link className={classes.historyLink} to={`/search?name=${el}`}>
                 {el}
               </Link>
-              <span id={el} className={classes.btn} onClick={removeHistoryItem}>
+              <p id={el} className={classes.deleteHistoryItem} onClick={removeHistoryItem}>
                 delete
-              </span>
+              </p>
             </div>
           ))}
         </div>
