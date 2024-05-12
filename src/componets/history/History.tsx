@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeFromHistory } from '../../redux/history-reducer';
 import { getDataFromLS, setDataToLS } from '../../utils/localStorage';
-import { MouseEventHandler } from 'react';
 
 const History = () => {
   const history = useAppSelector(state => state.history.history);
