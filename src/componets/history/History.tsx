@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeFromHistory } from '../../redux/history-reducer';
 import { getDataFromLS, setDataToLS } from '../../utils/localStorage';
+import { MouseEventHandler } from 'react';
 
 const History = () => {
   const history = useAppSelector(state => state.history.history);
@@ -11,11 +12,13 @@ const History = () => {
   const isAuth = getDataFromLS('isAuth', '""');
 	const isAuthHistory = isAuth + ' history';
 
-  function removeHistoryItem(e: any) {
-		const remove = e.target.getAttribute('id');
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  function removeHistoryItem(e: any) { // Я прочитала, что в крайнем случае можно оставлять any. Думаю, это именно он. MouseEvent не помогает избавиться от ошибки ts на 35 строке с onClick.
+    const target = e.target as Element;
+		const remove = target.getAttribute('id');
 		dispatch(removeFromHistory(remove));
 		const history = getDataFromLS(isAuthHistory, '[]').filter(
-			(el: any) => el !== remove
+			(el: string) => el !== remove
 		);
 		setDataToLS(isAuthHistory, history);
 	}
