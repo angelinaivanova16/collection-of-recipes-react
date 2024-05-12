@@ -24,7 +24,7 @@ export const Navbar = () => {
         <ul className={classes.list}>
           <li className={classes.item}><NavLink to='/main' className={({ isActive }) => isActive ? classes.active : classes.link}>Main</NavLink></li>
           <li className={classes.item}><NavLink to='/favorites' className={({ isActive }) => isActive ? classes.active : classes.link}>Favorites</NavLink></li>
-          <li className={classes.item}><NavLink to='/history' className={({ isActive }) => isActive ? classes.active : classes.link}>History search</NavLink></li>
+          <li className={classes.item}><NavLink to='/history' className={({ isActive }) => isActive ? classes.active : classes.link}>Search history</NavLink></li>
           <Button onClick={logOut}>Log Out</Button>
           <Button onClick={toggleTheme}>
             {theme === 'green' ? <span>Green theme</span> : <span>Light theme</span>}

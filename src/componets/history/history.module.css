@@ -1,0 +1,49 @@
+.historyTitle, .historyEmpty{
+  max-width:20%;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #1E5945;
+  font-size: 1.3em;
+}
+
+.historyEmpty {
+  color: #D58C51;
+  font-size: 1em;
+}
+
+.historyList {
+  max-width: 20%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.historyItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.historyLink {
+  text-decoration: none;
+}
+
+.deleteHistoryItem {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #7BA7AB;
+  background: #7BA7AB;
+  color: #FFFFFF;
+  border-radius: 5px;
+  width: 50px;
+  height: 15px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.deleteHistoryItem:hover {
+  opacity: 0.7;
+}

@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export type RecipesResponse = {
   recipes: Recipe[];
+  length: number;
 };
 
 export type Recipe = {
@@ -22,12 +23,20 @@ export const recipesApi = createApi({
       }),
       transformResponse: (response: RecipesResponse) => response.recipes
     }),
+
     getDescription: build.query({
       query: id => {
         return {
           url: `recipes/${id}`
         };
       },
+    }),
+
+    getRecipesBySearch: build.query<Recipe[], string>({
+      query: (query: string) => {
+        return `recipes/search?q=${query}`;
+      },
+      transformResponse: (response: RecipesResponse) => response.recipes,
     }),
   }),
   tagTypes: ['Recipes'],
@@ -36,4 +45,5 @@ export const recipesApi = createApi({
 export const {
   useGetRecipesQuery,
   useGetDescriptionQuery,
+  useGetRecipesBySearchQuery,
 } = recipesApi;
