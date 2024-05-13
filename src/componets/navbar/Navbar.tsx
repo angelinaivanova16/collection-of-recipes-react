@@ -5,7 +5,6 @@ import { Button } from './../button/Button';
 import { useTheme } from './../../context/ThemeContext';
 
 export const Navbar = () => {
-  // для авторизации и регистрации:
   const isAuth = getDataFromLS('isAuth', '""');
   const toMain = useNavigate();
 
@@ -15,7 +14,6 @@ export const Navbar = () => {
     window.location.reload();
   };
 
-  // для смены темы:
   const { theme, toggleTheme } = useTheme();
 
   return (

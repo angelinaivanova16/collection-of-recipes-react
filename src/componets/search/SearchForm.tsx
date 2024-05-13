@@ -39,7 +39,6 @@ export const SearchForm = () => {
 
   const debouncedSearch = useDebounce(searchValue);
 
-  // Спрячу саджесты при клике вне формы:
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -56,7 +55,6 @@ export const SearchForm = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-  ////////
 
   const handleSubmitSearch = (e: FormEvent) => {
     e.preventDefault();
@@ -76,7 +74,6 @@ export const SearchForm = () => {
   const recipes = data!;
 
 
-  // Добавлю в историю поиска:
   const setToHistory = () => {
     if (!debouncedSearch) {
       setError('Error');
@@ -89,7 +86,6 @@ export const SearchForm = () => {
       ]);
     }
   };
-  ////////
 
   const suggestsWrapper = () => {
     if (isLoading) {

@@ -2,12 +2,12 @@
 import { createContext, useContext, useState, useLayoutEffect, ReactNode } from 'react';
 
 interface ThemeContextType {
-  theme: string;
-  toggleTheme: () => void;
+	theme: string;
+	toggleTheme: () => void;
 }
 
 interface Props {
-  children: ReactNode;
+	children: ReactNode;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);

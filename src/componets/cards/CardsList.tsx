@@ -9,8 +9,8 @@ export const CardsList = () => {
 
 
   if (isLoading) {
-		return <Preloader />;
-	}
+    return <Preloader />;
+  }
 
   return (
     <main className={classes.cardsList}>
