@@ -14,7 +14,7 @@ export const Navbar = () => {
     window.location.reload();
   };
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggle } = useTheme();
 
   return (
     <nav className={classes.navigation}>
@@ -24,7 +24,7 @@ export const Navbar = () => {
           <li className={classes.item}><NavLink to='/favorites' className={({ isActive }) => isActive ? classes.active : classes.link}>Favorites</NavLink></li>
           <li className={classes.item}><NavLink to='/history' className={({ isActive }) => isActive ? classes.active : classes.link}>Search history</NavLink></li>
           <Button onClick={logOut}>Log Out</Button>
-          <Button onClick={toggleTheme}>
+          <Button onClick={toggle}>
             {theme === 'green' ? <span>Green theme</span> : <span>Light theme</span>}
           </Button>
         </ul>
@@ -33,7 +33,7 @@ export const Navbar = () => {
           <li className={classes.item}><NavLink to='/main' className={({ isActive }) => isActive ? classes.active : classes.link}>Main</NavLink></li>
           <li className={classes.item}><NavLink to='/loginPage' className={({ isActive }) => isActive ? classes.active : classes.link}>Sign In</NavLink></li>
           <li className={classes.item}><NavLink to='/registrationPage' className={({ isActive }) => isActive ? classes.active : classes.link}>Sign Up</NavLink></li>
-          <Button onClick={toggleTheme}>
+          <Button onClick={toggle}>
             {theme === 'green' ? <span>Green theme</span> : <span>Light theme</span>}
           </Button>        </ul>
       )}

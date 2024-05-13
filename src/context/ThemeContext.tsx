@@ -1,9 +1,9 @@
 
-import { createContext, useContext, useState, useLayoutEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useLayoutEffect, ReactNode, useMemo, useCallback } from 'react';
 
 interface ThemeContextType {
 	theme: string;
-	toggleTheme: () => void;
+	toggle: () => void;
 }
 
 interface Props {
@@ -15,8 +15,10 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 const ThemeProvider = ({ children }: Props) => {
 	const [theme, setTheme] = useState('green');
 
+	
 	const toggleTheme = () =>
 		setTheme(theme => (theme === 'light' ? 'green' : 'light'));
+
 	useLayoutEffect(() => {
 		if (theme === 'light') {
 			document.body.classList.add('green');
@@ -25,8 +27,17 @@ const ThemeProvider = ({ children }: Props) => {
 		}
 	}, [theme]);
 
+	const toggle = useCallback(() => {
+		toggleTheme()
+	}, [])
+
+	const contextValue = useMemo(() => ({
+		theme,
+		toggle
+	}), [theme, toggle]);
+
 	return (
-		<ThemeContext.Provider value={{ theme, toggleTheme }}>
+		<ThemeContext.Provider value={contextValue}>
 			{children}
 		</ThemeContext.Provider>
 	);

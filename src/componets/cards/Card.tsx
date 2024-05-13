@@ -25,7 +25,6 @@ export const Card = ({ id, name, image }: Props) => {
     ) : (
       toLogin('/loginPage')
     )
-
   }
 
   let removeFavorites = () => {
