@@ -2,6 +2,8 @@ import { useDispatch } from 'react-redux';
 import { Button } from './Button';
 import { addToFavorites, removeFromFavorites } from '../../redux/favorites-reducer';
 import { useAppSelector } from '../../hooks/hooks';
+import { useNavigate } from 'react-router-dom';
+import { getDataFromLS } from '../../utils/localStorage';
 
 type Props = {
   children?: React.ReactNode;
@@ -10,11 +12,17 @@ type Props = {
 };
 
 export const ButtonFavorite = ({ onClick, children, id }: Props) => {
+  const toLogin = useNavigate();
+  const isAuth = getDataFromLS('isAuth', '""');
   const stateId = useAppSelector(state => state.favorites.favoritesIds);
   const dispatch = useDispatch();
 
   const addFavorites = () => {
-    dispatch(addToFavorites(id))
+    isAuth ? (
+      dispatch(addToFavorites(id))
+    ) : (
+      toLogin('/loginPage')
+    )
   }
 
   let removeFavorites = () => {
