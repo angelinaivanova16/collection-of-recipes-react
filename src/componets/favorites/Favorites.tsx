@@ -28,7 +28,6 @@ const Favorites = () => {
   };
 
   let favoritesCards = recipes.filter((item: Props) => {
-        console.log(typeof item.id)
     return favoriteIds.includes(item.id)
   })
 
