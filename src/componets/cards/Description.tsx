@@ -2,6 +2,7 @@ import classes from './description.module.css';
 import { useParams } from 'react-router-dom';
 import { useGetDescriptionQuery } from '../../api/recipesApi';
 import { Preloader } from '../common/Preloader';
+import { ButtonFavorite } from '../button/ButtonFavorite';
 
 type Params = {
   userId: string;
@@ -12,6 +13,7 @@ const Description = () => {
 
   const { data, isLoading } = useGetDescriptionQuery(params.userId);
   const recipe = data!;
+  const cardId = +params.userId;
 
   if (isLoading) {
     return <Preloader />;
@@ -36,6 +38,7 @@ const Description = () => {
             ))}
           </ul>
         </div>
+        <ButtonFavorite id={cardId}/>
       </div>
     </div>
   )

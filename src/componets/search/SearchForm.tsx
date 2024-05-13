@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { addToHistory } from '../../redux/history-reducer';
 
 export type Recipe = {
-  id: string;
+  id: number;
   name: string;
   image: string;
   ingredients: string[];

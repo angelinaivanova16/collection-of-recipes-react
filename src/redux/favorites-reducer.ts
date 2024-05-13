@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getDataFromLS, getKey } from "../utils/localStorage";
 
 interface FavoritesInitialState {
-  favoritesIds: string[];
+  favoritesIds: number[];
 }
 
 const initialState: FavoritesInitialState = {

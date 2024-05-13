@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { getDataFromLS } from '../../utils/localStorage';
 
 type Props = {
-  id: string;
+  id: number;
   name: string;
   image: string;
 };

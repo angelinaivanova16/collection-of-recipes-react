@@ -22,12 +22,13 @@ const Favorites = () => {
   }
 
   type Props = {
-    id: string;
+    id: number;
     name: string;
     image: string;
   };
 
   let favoritesCards = recipes.filter((item: Props) => {
+        console.log(typeof item.id)
     return favoriteIds.includes(item.id)
   })
 
