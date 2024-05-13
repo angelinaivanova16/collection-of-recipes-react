@@ -1,10 +1,11 @@
 import classes from './card.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from '../button/Button';
 import { useDispatch } from 'react-redux';
 import { addToFavorites, removeFromFavorites } from '../../redux/favorites-reducer';
 import { useAppSelector } from '../../hooks/hooks';
 import PropTypes from 'prop-types';
+import { getDataFromLS } from '../../utils/localStorage';
 
 type Props = {
   id: string;
@@ -13,11 +14,18 @@ type Props = {
 };
 
 export const Card = ({ id, name, image }: Props) => {
+  const toLogin = useNavigate();
+  const isAuth = getDataFromLS('isAuth', '""');
   const stateId = useAppSelector(state => state.favorites.favoritesIds);
   const dispatch = useDispatch();
 
   const addFavorites = () => {
-    dispatch(addToFavorites(id));
+    isAuth ? (
+      dispatch(addToFavorites(id))
+    ) : (
+      toLogin('/loginPage')
+    )
+
   }
 
   let removeFavorites = () => {

@@ -1,26 +1,34 @@
 import classes from './history.module.css';
 import { useAppSelector } from '../../hooks/hooks';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeFromHistory } from '../../redux/history-reducer';
 import { getDataFromLS, setDataToLS } from '../../utils/localStorage';
+import { useEffect } from 'react';
 
 const History = () => {
+  const toLogin = useNavigate();
+  const isAuth = getDataFromLS('isAuth', '""');
   const history = useAppSelector(state => state.history.history);
   const dispatch = useDispatch();
-  const isAuth = getDataFromLS('isAuth', '""');
-	const isAuthHistory = isAuth + ' history';
+  const isAuthHistory = isAuth + ' history';
 
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-  function removeHistoryItem(e: any) { // Я прочитала, что в крайнем случае можно оставлять any. Думаю, это именно он. MouseEvent не помогает избавиться от ошибки ts на 35 строке с onClick.
+  useEffect(() => {
+    if (!isAuth) {
+      toLogin('/loginPage')
+    }
+  });
+
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  function removeHistoryItem(e: any) {
     const target = e.target as Element;
-		const remove = target.getAttribute('id');
-		dispatch(removeFromHistory(remove));
-		const history = getDataFromLS(isAuthHistory, '[]').filter(
-			(el: string) => el !== remove
-		);
-		setDataToLS(isAuthHistory, history);
-	}
+    const remove = target.getAttribute('id');
+    dispatch(removeFromHistory(remove));
+    const history = getDataFromLS(isAuthHistory, '[]').filter(
+      (el: string) => el !== remove
+    );
+    setDataToLS(isAuthHistory, history);
+  }
 
   return (
     <div className={classes.history}>

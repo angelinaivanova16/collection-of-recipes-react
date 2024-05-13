@@ -3,14 +3,22 @@ import { useGetRecipesQuery } from '../../api/recipesApi';
 import { useAppSelector } from '../../hooks/hooks';
 import { Card } from '../cards/Card';
 import { Preloader } from '../common/Preloader';
+import { useNavigate } from 'react-router-dom';
+import { getDataFromLS } from '../../utils/localStorage';
 
 const Favorites = () => {
+  const toLogin = useNavigate();
+  const isAuth = getDataFromLS('isAuth', '""');
   const favoriteIds = useAppSelector(state => state.favorites.favoritesIds);
   const { data, isLoading } = useGetRecipesQuery();
   const recipes = data!;
 
   if (isLoading) {
     return <Preloader />;
+  }
+
+  if (!isAuth) {
+    toLogin('/loginPage')
   }
 
   type Props = {

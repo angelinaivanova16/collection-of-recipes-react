@@ -15,10 +15,8 @@ const Favorites = lazy(() => import('./componets/favorites/Favorites'));
 const History = lazy(() => import('./componets/history/History'));
 const RegistrationPage = lazy(() => import('./componets/login/RegistrationPage'));
 const Description = lazy(() => import('./componets/cards/Description'));
-// const SearchPage = lazy(() => import('./componets/search/SearchPage'));
 
 function App() {
-
   return (
     <div className={classes.app}>
       <Header />

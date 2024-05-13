@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 export const useAppDispatch = () => useDispatch<AppDispatch>()
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
-// Пробую useDebounce: 
+// мой useDebounce: 
 export const useDebounce = <T>(value: T, delay = 500) => {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
 
@@ -20,3 +20,5 @@ export const useDebounce = <T>(value: T, delay = 500) => {
 
   return debouncedValue;
 };
+
+// мой useDebounce: 
