@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeFromHistory } from '../../redux/history-reducer';
 import { getDataFromLS, setDataToLS } from '../../utils/localStorage';
+import { selectHistoryItems } from '../../redux/selectors/historySelector';
 
 const History = () => {
   const isAuth = getDataFromLS('isAuth', '""');
-  const history = useAppSelector(state => state.history.history);
+  const history = useAppSelector(selectHistoryItems);
   const dispatch = useDispatch();
   const isAuthHistory = isAuth + ' history';
 

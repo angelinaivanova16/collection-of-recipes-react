@@ -1,9 +1,9 @@
-import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { getDataFromLS } from '../../utils/localStorage';
+import { ReactElement } from "react"
 
 type Props = {
-  children?: React.ReactNode;
+	children: ReactElement;
 };
 
 const PrivateRoute = ({ children } : Props) => {
@@ -13,7 +13,7 @@ const PrivateRoute = ({ children } : Props) => {
 		return <Navigate to="/loginPage" />;
 	}
 
-	return <>children</>;
+	return <div>{children}</div>;
 };
 
 export default PrivateRoute;

@@ -10,10 +10,10 @@ import { Preloader } from './componets/common/Preloader';
 import LoginPage from './componets/login/LoginPage';
 import { SearchPage } from './componets/search/SearchPage';
 import ProtectedRoute from './componets/common/ProtectedRoute';
+import Favorites from './componets/favorites/Favorites';
+import History from './componets/history/History';
 
 const Main = lazy(() => import('./componets/main/Main'));
-const Favorites = lazy(() => import('./componets/favorites/Favorites'));
-const History = lazy(() => import('./componets/history/History'));
 const RegistrationPage = lazy(() => import('./componets/login/RegistrationPage'));
 const Description = lazy(() => import('./componets/cards/Description'));
 

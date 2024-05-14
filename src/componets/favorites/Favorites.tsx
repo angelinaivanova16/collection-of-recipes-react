@@ -3,9 +3,10 @@ import { useGetRecipesQuery } from '../../api/recipesApi';
 import { useAppSelector } from '../../hooks/hooks';
 import { Card } from '../cards/Card';
 import { Preloader } from '../common/Preloader';
+import { selectFavoriteItems } from '../../redux/selectors/favoriteSelector';
 
 const Favorites = () => {
-  const favoriteIds = useAppSelector(state => state.favorites.favoritesIds);
+  const favoriteIds = useAppSelector(selectFavoriteItems);
   const { data, isLoading } = useGetRecipesQuery();
   const recipes = data!;
 
