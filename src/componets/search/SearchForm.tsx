@@ -73,6 +73,9 @@ export const SearchForm = () => {
   const { data, isLoading } = useGetRecipesBySearchQuery(debouncedSearch, { skip: debouncedSearch.length === 0 });
   const recipes = data!;
 
+  useEffect(() => {
+    setSearchValue(name);
+  }, [name, searchParams]);
 
   const setToHistory = () => {
     if (!debouncedSearch) {
