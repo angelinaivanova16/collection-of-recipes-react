@@ -19,7 +19,6 @@
 - [x] Реализованы Требования к функциональности
 - [x] Для хранения учетных записей пользователей, их Избранного и Истории поиска, использую LocalStorage
 - [x] Использую функциональные компоненты c хуками
-- [x] Есть разделение на умные и глупые компоненты (Поскольку это требование не обязательное, я предпочла сделать основную структуру проекта без разделения на умные и глупые компоненты, так как считаю, что моя структура сейчас выглядит более читабельно для себя и других разработчиков. Хотя имею опыт подобного разделения. Все-таки добавлю сюда для порядка ссылки на пример умного компонента [SearchForm](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/componets/search/SearchForm.tsx) и глупого компонента  [Suggest](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/componets/search/Suggest.tsx).)
 - [x] Есть рендеринг [списков](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/componets/cards/CardsList.tsx)
 - [x] Реализованы формы ([FormRegistrationLogin](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/componets/login/FormRegistrationLogin.jsx), [SearchForm](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/componets/search/SearchForm.tsx))
 - [x] Есть применение Контекст API ([ThemeContext](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/context/ThemeContext.tsx))
