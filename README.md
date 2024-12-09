@@ -14,9 +14,7 @@
 - История поиска: сохранение названий рецептов, возможность перейти на страницу поиска (страница истории)
 - Избранные рецепты: пользователь может добавлять и удалять рецепты из избранного (страница избранное)
 ---
-## Реализация требований:
-### 1 уровень (обязательный - необходимый минимум):
-- [x] Реализованы Требования к функциональности
+## функциональность:
 - [x] Для хранения учетных записей пользователей, их Избранного и Истории поиска, использую LocalStorage
 - [x] Использую функциональные компоненты c хуками
 - [x] Есть рендеринг [списков](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/componets/cards/CardsList.tsx)
@@ -32,7 +30,5 @@
 - [x] Есть кастомная [мидлвара](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/redux/middleware.js)
 - [x] Используется [RTK Query](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/api/recipesApi.ts)
 - [x] Используется [Transforming Responses](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/api/recipesApi.ts)
-
-### 2 уровень (необязательный):
 - [x] Настроен CI/CD
 - [x] Использую TypeScript
