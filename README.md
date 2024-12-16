@@ -31,4 +31,4 @@
 - [x] Используется [RTK Query](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/api/recipesApi.ts)
 - [x] Используется [Transforming Responses](https://github.com/angelinaivanova16/collection-of-recipes-react/blob/main/src/api/recipesApi.ts)
 - [x] Настроен CI/CD
-- [x] Использую TypeScript
+- [x] Использую TypeScript.
